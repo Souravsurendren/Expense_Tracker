@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Expense Tracker</div>
+        <button id="toggle-mode">🌙</button>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Income Entry Section -->
+            <div class="card">
+                <h2>Enter Income</h2>
+                <form id="income-form">
+                    <label for="income-date">Month Of Income:</label>
+                    <select id="income-date" required>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                    <label for="income-amount">Income Amount:</label>
+                    <input type="number" id="income-amount" placeholder="Enter amount" required>
+                    <label for="income-source">Source of Income:</label>
+                    <input type="text" id="income-source" placeholder="Enter source" required>
+                    <button type="submit">Add Income</button>
+                </form>
+            </div>
+
+            <!-- Expenses Entry Section -->
+            <div class="card">
+                <h2>Enter Expenses</h2>
+                <form id="expenses-form">
+                    <label for="expense-type">Type of Expense:</label>
+                    <select id="expense-type" required>
+                        <option value="House Rent">House Rent</option>
+                        <option value="Electricity Bill">Electricity Bill</option>
+                        <option value="Water Bill">Water Bill</option>
+                        <option value="Loans">Loans (EMI)</option>
+                        <option value="Mobile Recharge">Mobile Recharge</option>
+                        <option value="Subscriptions">Subscriptions</option>
+                        <option value="Groceries">Groceries</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <label for="expense-amount">Amount:</label>
+                    <input type="number" id="expense-amount" placeholder="Enter amount" required>
+                    <label for="expense-date">Month Of Income:</label>
+                    <select id="expense-date" required>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                    <button type="submit">Add Expense</button>
+                </form>
+            </div>
+
+            <!-- Savings Entry Section -->
+            <div class="card">
+                <h2>Enter Savings</h2>
+                <form id="savings-form">
+                    <label for="savings-amount">Savings Amount:</label>
+                    <input type="number" id="savings-amount" placeholder="Enter savings amount" required>
+                    <label for="savings-date">Month Of Entry:</label>
+                    <select id="savings-date" required>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                    <button type="submit">Add Savings</button>
+                </form>
+            </div>
+
+            <!-- Data Management Section -->
+            <div class="card">
+                <h2>Data Management</h2>
+                <div class="button-group">
+                    <button id="export-data" class="action-button">Export Data</button>
+                    <label for="import-file" class="action-button">Import Data</label>
+                    <input type="file" id="import-file" accept=".json" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Visualization Section -->
+            <div class="chart-container">
+                <div class="chart-card">
+                    <h3>Income vs Expenses</h3>
+                    <canvas id="income-expenses-chart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Expense Breakdown</h3>
+                    <canvas id="expense-breakdown-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Logbook Section -->
+            <div class="card">
+                <h2>Logbook</h2>
+                <div id="logbook">
+                    <!-- Entries will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="card">
+                <h2>Summary</h2>
+                <div id="summary-content">
+                    <p><strong>Total Income:</strong> ₹<span id="total-income">0.00</span></p>
+                    <p><strong>Total Expenses:</strong> ₹<span id="total-expenses">0.00</span></p>
+                    <p><strong>Savings:</strong> ₹<span id="total-savings">0.00</span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Developed by SHYAM SUNDHAR G && SOURAV SURENDRAN. Connect with me on 
+            <a href="https://github.com/souravsurendren" target="_blank" rel="noopener">GITHUB</a>, 
+            <a href="https://linkedin.com/in/souravsurendren" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
