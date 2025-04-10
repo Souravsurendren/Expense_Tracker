@@ -46,7 +46,7 @@ An intelligent and user-friendly web application that helps users manage their i
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 git clone https://github.com/your-username/expense-tracker.git
